@@ -35,7 +35,7 @@ context.getExternalFilesDir("plugin"),
 再调用file.setReadOnly()后就不报错了。
 
 下面是运行截图：
-![示例图片1](https://github.com/tomyZhou/PluginProject/blob/main/screenshoot/1.jpg?raw=true)
-![示例图片2](https://github.com/tomyZhou/PluginProject/blob/main/screenshoot/2.jpg?raw=true)
-![示例图片3](https://github.com/tomyZhou/PluginProject/blob/main/screenshoot/3.jpg?raw=true)
-![示例图片4](https://github.com/tomyZhou/PluginProject/blob/main/screenshoot/4.jpg?raw=true)
+![示例图片1](https://raw.githubusercontent.com/tomyZhou/PluginProject/refs/heads/main/screenshoot/1.jpg?token=GHSAT0AAAAAADUBM2ILLJY7DSEYRP3HWN242N2COEA)
+![示例图片2](https://raw.githubusercontent.com/tomyZhou/PluginProject/refs/heads/main/screenshoot/2.jpg?token=GHSAT0AAAAAADUBM2ILLJY7DSEYRP3HWN242N2COEA)
+![示例图片3](https://raw.githubusercontent.com/tomyZhou/PluginProject/refs/heads/main/screenshoot/3.jpg?token=GHSAT0AAAAAADUBM2ILLJY7DSEYRP3HWN242N2COEA)
+![示例图片4](https://raw.githubusercontent.com/tomyZhou/PluginProject/refs/heads/main/screenshoot/4.jpg?token=GHSAT0AAAAAADUBM2ILLJY7DSEYRP3HWN242N2COEA)
