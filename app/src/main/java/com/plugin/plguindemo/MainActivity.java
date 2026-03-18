@@ -63,25 +63,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void startPluginActivity(){
-        //启动占位，代理Activity, 借ProxyActivity这个壳，真正的加载插件Activity里的内容
-        String pluginName = "plugin.apk";
-        PackageManager packageManager = getPackageManager();
-        File pluginFile = new File(getFilesDir(), pluginName);
-        if(!pluginFile.exists()){
-            return;
-        }
-        String packagePath = pluginFile.getAbsolutePath();
-        PackageInfo info = packageManager.getPackageArchiveInfo(packagePath, PackageManager.GET_ACTIVITIES);
-
-        //经测试发现：info.activities插件里Activity的顺序和插件里Manifest.xml里声明的顺序一样。
-        if(info!=null){
-            ActivityInfo activityInfo = info.activities[0];
-
-             for(int i=0;i<info.activities.length;i++){
-                 Log.e("xxx",info.activities[i].name);
-             }
+        String activityName = FileUtils.getLaunchActivityName(this);
+        if(activityName!=null){
             Intent intent = new Intent(this,ProxyActivity.class);
-            intent.putExtra("className",activityInfo.name);
+            intent.putExtra("className", activityName);
             startActivity(intent);
         }
     }
