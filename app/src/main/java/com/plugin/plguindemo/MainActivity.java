@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, "加载plugin", Toast.LENGTH_SHORT).show();
         //加载插件项目
         PluginManager.getInstance(this).loadPlugin();
+        Toast.makeText(this,"加载成功",Toast.LENGTH_SHORT).show();
     }
 
     public void startPluginActivity(){

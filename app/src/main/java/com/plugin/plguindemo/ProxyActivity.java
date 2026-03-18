@@ -23,15 +23,7 @@ import dalvik.system.DexClassLoader;
 //占位（代理）Activity
 public class ProxyActivity extends Activity {
 
-    @Override
-    public ClassLoader getClassLoader() {
-        return PluginManager.getInstance(this).getClassLoader();
-    }
 
-    @Override
-    public Resources getResources() {
-        return PluginManager.getInstance(this).getResources();
-    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -63,6 +55,18 @@ public class ProxyActivity extends Activity {
             e.fillInStackTrace();
         }
 
+    }
+
+    //其实是插件里的classLoader
+    @Override
+    public ClassLoader getClassLoader() {
+        return PluginManager.getInstance(this).getClassLoader();
+    }
+
+    //其实是插件里的resources
+    @Override
+    public Resources getResources() {
+        return PluginManager.getInstance(this).getResources();
     }
 
     @Override
