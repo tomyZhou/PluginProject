@@ -14,7 +14,18 @@
 遇到Attempt to load writeable dex file的问题，处理方式
 
 做插件化的时候，把apk文件从assets里面拷贝到存储空间里面，开始用的存放目录是
-context.getExternalFilesDir("plugin"), 对应的存储目录是：storage/emulated/0/Android/data/com.plugin.plugindemo/plugin.apk 然后使用DexClassLoader加载插件包，一直碰到这个报错： Attempt to load writeable dex file 设置了 file.setReadOnly()后还是报这个错。 后来将存放目录改成 context.getFilesDir() 对应的存储目录是：
+
+context.getExternalFilesDir("plugin"), 
+
+对应的存储目录是：storage/emulated/0/Android/data/com.plugin.plugindemo/plugin.apk 
+
+然后使用DexClassLoader加载插件包，一直碰到这个报错：
+
+ Attempt to load writeable dex file 
+
+设置了 file.setReadOnly()后还是报这个错。 
+
+后来将存放目录改成 context.getFilesDir() 对应的存储目录是：
 
 /data/user/0/com.plugin.plguindemo/files/plugin.apk
 
