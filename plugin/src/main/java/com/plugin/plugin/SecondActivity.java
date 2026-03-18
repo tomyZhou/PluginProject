@@ -1,7 +1,9 @@
 package com.plugin.plugin;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.core.graphics.Insets;
@@ -27,6 +29,14 @@ public class SecondActivity extends BaseActivity {
             Log.e("xxx", data);
             Toast.makeText(appActivity, "我是插件，" + data, Toast.LENGTH_SHORT).show();
         }
+
+        findViewById(R.id.to_service).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(appActivity,TestService.class);
+                appActivity.startService(intent);
+            }
+        });
 
     }
 }

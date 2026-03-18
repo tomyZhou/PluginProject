@@ -1,6 +1,7 @@
 package com.plugin.plguindemo;
 
 import android.app.Activity;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageInfo;
@@ -79,5 +80,14 @@ public class ProxyActivity extends Activity {
             proxyIntent.putExtra("className",appName);
             //不要死循环调用自己的方法，要用父类的方法。super
             super.startActivity(proxyIntent);
+    }
+
+    //启动service
+    @Nullable
+    @Override
+    public ComponentName startService(Intent service) {
+        Intent intent = new Intent(this,ProxyService.class);
+        intent.putExtra("serviceName",service.getComponent().getClassName());
+        return super.startService(intent);
     }
 }
