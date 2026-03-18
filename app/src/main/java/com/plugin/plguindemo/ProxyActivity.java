@@ -72,6 +72,7 @@ public class ProxyActivity extends Activity {
     @Override
     public void startActivity(Intent intent) {
 
+            //获取Intent中的第二个参数的类名。intent.getComponent().getClassName();
             String appName = intent.getComponent().getClassName();
 
             Intent proxyIntent = new Intent(this,ProxyActivity.class);
