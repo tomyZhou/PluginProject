@@ -1,5 +1,7 @@
 插桩（代理）方式实现插件化启动插件里的Activity，插件里的Activity不用在宿主Manifest.xml中声明。
 
+实现在从宿主打开插件里的Activity，从插件里的一个Activity跳转到插件里的另一个Activity。
+
 
 方案说明
 
