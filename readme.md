@@ -35,7 +35,10 @@ context.getExternalFilesDir("plugin"),
 再调用file.setReadOnly()后就不报错了。
 
 下面是运行截图：
-![示例图片1](/screenshoot/1.jpg)
-![示例图片2](/screenshoot/2.jpg)
-![示例图片3](/screenshoot/3.jpg)
-![示例图片4](/screenshoot/4.jpg)
+
+<img src="(/screenshoot/1.jpg" width="300">
+<img src="(/screenshoot/2.jpg" width="300">
+<img src="(/screenshoot/3.jpg" width="300">
+<img src="(/screenshoot/4.jpg" width="300">
+
+ 
