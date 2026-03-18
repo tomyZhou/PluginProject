@@ -1,18 +1,15 @@
 package com.plugin.plguindemo;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.content.res.AssetManager;
 import android.util.Log;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
 
 public class FileUtils {
 
@@ -65,7 +62,7 @@ public class FileUtils {
      */
     public static String  getLaunchActivityName(Context context){
             //启动占位，代理Activity, 借ProxyActivity这个壳，真正的加载插件Activity里的内容
-            String pluginName = "plugin.apk";
+            String pluginName = "plugin.js";
             PackageManager packageManager = context.getPackageManager();
             File pluginFile = new File(context.getFilesDir(), pluginName);
             if(!pluginFile.exists()){
@@ -77,6 +74,8 @@ public class FileUtils {
             //经测试发现：info.activities插件里Activity的顺序和插件里Manifest.xml里声明的顺序一样。
             if(info!=null){
                 ActivityInfo activityInfo = info.activities[0];
+
+                Log.e("xxx","列出插件里的Activity，发现只会列出Manifest.xml中配置过的Activity：");
 
                 for(int i=0;i<info.activities.length;i++){
                     Log.e("xxx",info.activities[i].name);

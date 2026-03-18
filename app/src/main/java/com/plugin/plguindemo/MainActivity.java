@@ -22,8 +22,6 @@ import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Integer  REQUEST_CODE = 1;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,9 +32,6 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
-
-        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_CODE);
 
         findViewById(R.id.bt_load).setOnClickListener(new View.OnClickListener() {
             @Override

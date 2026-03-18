@@ -40,25 +40,25 @@ public class PluginManager {
 
     /**
      *    context.getFilesDir()
-     *    /data/user/0/com.plugin.plguindemo/files/plugin.apk
+     *    /data/user/0/com.plugin.plguindemo/files/plugin.js
      *
      *    context.getExternalFilesDir("");
-     *    storage/emulated/0/Android/data/com.plugin.plugindemo/plugin.apk
+     *    storage/emulated/0/Android/data/com.plugin.plugindemo/plugin.js
      */
     public void loadPlugin() {
 
-        String pluginName = "plugin.apk";
+        String pluginName = "plugin.js";
 
             //这一句也很重要，放在私有目录下getFilesDir setReadOnly才有作用
             //实测证明 context.getExternalFilesDir(""); 这样获取到的是外部存储，对外部存储的文件设置setReadOnly不起作用。
-            //Attempt to load writeable dex file: storage/emulated/0/Android/data/com.plugin.plugindemo/plugin.apk
+            //Attempt to load writeable dex file: storage/emulated/0/Android/data/com.plugin.plugindemo/plugin.js
             File pluginFile = new File(context.getFilesDir(), pluginName);
 
             Log.e("xxx",pluginFile.getAbsolutePath());
 
             if (!pluginFile.exists()) {
                 // 调用之前学过的拷贝方法，将assets中的APK复制到私有目录
-                if (!FileUtils.copyApkFromAssetsToPrivateDir(context, pluginName, pluginName)) {
+                if (!FileUtils.copyApkFromAssetsToPrivateDir(context, "plugin.js", pluginName)) {
                     Log.e(TAG, "插件文件复制失败");
                 }else{
                     load(pluginFile);
