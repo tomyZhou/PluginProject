@@ -36,9 +36,9 @@ context.getExternalFilesDir("plugin"),
 
 下面是运行截图：
 
-<img src="(/screenshoot/1.jpg" width="300">
-<img src="(/screenshoot/2.jpg" width="300">
-<img src="(/screenshoot/3.jpg" width="300">
-<img src="(/screenshoot/4.jpg" width="300">
+<img src="(screenshoot/1.jpg" width="300">
+<img src="(screenshoot/2.jpg" width="300">
+<img src="(screenshoot/3.jpg" width="300">
+<img src="(screenshoot/4.jpg" width="300">
 
  
