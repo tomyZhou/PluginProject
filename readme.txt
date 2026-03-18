@@ -1,0 +1,6 @@
+方案说明
+
+1、创建一个插桩，占位Activity，为了实现Activity进出栈
+2、通过DexclassLoader获取到插件包里的类,通过Resources获取插件包里的资源，并创建出插件里的Activity对象
+3、这时的插件Activity对象没有运行环境context,我们需要把宿主里占位Activity环境传给插件里的对象
+4、当要执行插件Activity里的生命周期方法时，使用宿主占位Activity里的环境来执行相应操作。

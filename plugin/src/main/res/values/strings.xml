@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">plugin</string>
+    <string name="hello">我是插件项目里的页面</string>
+</resources>
