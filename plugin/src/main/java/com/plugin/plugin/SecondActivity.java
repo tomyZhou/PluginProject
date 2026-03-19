@@ -33,7 +33,7 @@ public class SecondActivity extends BaseActivity {
                 return insets;
             });
 
-        if(savedInstanceState == null && savedInstanceState.getString("data")!=null) {
+        if(savedInstanceState != null && savedInstanceState.getString("data")!=null) {
             String data = savedInstanceState.getString("data");
             Log.e("xxx", data);
             Toast.makeText(appActivity, "我是插件，" + data, Toast.LENGTH_SHORT).show();
