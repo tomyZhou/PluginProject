@@ -2,6 +2,8 @@
 
 实现在从宿主打开插件里的Activity，从插件里的一个Activity跳转到插件里的另一个Activity。
 
+从插件里的Activity打开插件里的一个Service，模拟下载任务，并通知到Activity。
+
 
 方案说明
 
@@ -35,6 +37,7 @@ context.getExternalFilesDir("plugin"),
 /data/user/0/com.plugin.plguindemo/files/plugin.apk
 
 再调用file.setReadOnly()后就不报错了。
+
 
 下面是运行截图：
 
