@@ -7,6 +7,9 @@
 3、从插件里的Activity打开插件里的一个Service，模拟下载任务，并通知到Activity。
 
 
+
+
+
 方案说明
 
 1、创建一个插桩，占位Activity，为了实现Activity进出栈
