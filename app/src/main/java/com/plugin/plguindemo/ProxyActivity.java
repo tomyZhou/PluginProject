@@ -59,10 +59,10 @@ public class ProxyActivity extends Activity {
 
 
     @Override
-    protected void onDestroy() {
+    protected void onStop() {
         ActivityInterface activityInterface = getActivityInterface();
-        activityInterface.onDestory();
-        super.onDestroy();
+        activityInterface.onStop();
+        super.onStop();
     }
 
     //其实是插件里的classLoader

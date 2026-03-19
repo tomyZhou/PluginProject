@@ -67,13 +67,14 @@ public class SecondActivity extends BaseActivity {
 
 
     @Override
-    public void onDestory() {
-        Log.e("xxx","onDestory:"+SecondActivity.class.getSimpleName());
+    public void onStop() {
+        Log.e("xxx","onStop:"+SecondActivity.class.getSimpleName());
         try{
             appActivity.unregisterReceiver(myReceiver); // 注销接收器
         }catch (Exception e){
             e.fillInStackTrace();
         }
+        super.onStop();
     }
 
     public class MyBroadcastReceiver extends BroadcastReceiver {
