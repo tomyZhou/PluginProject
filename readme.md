@@ -4,7 +4,7 @@
 
 2、实现在从宿主打开插件里的Activity，从插件里的一个Activity跳转到插件里的另一个Activity。
 
-3、从插件里的Activity打开插件里的一个Service，模拟下载任务，并通知到Activity。
+3、从插件里的Activity打开插件里的一个Service，模拟下载任务，并用在Service里用广播通知到Activity。
 
 <br/>
 <br/>
