@@ -6,7 +6,8 @@
 
 3、从插件里的Activity打开插件里的一个Service，模拟下载任务，并通知到Activity。
 
-
+<br/>
+<br/>
 
 
 
