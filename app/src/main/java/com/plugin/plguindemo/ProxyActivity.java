@@ -1,7 +1,9 @@
 package com.plugin.plguindemo;
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
 import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -15,16 +17,27 @@ import java.lang.reflect.Constructor;
 public class ProxyActivity extends Activity {
 
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Log.e("xxx","进入到proxy类");
+        String className = getIntent().getStringExtra("className");
+        Log.e("xxx", "进入到proxy类");
 
+        ActivityInterface activityInterface = getActivityInterface();
+        if(activityInterface!=null){
+            Bundle bundle = new Bundle();
+            bundle.putString("data", "我是宿主传递过来的信息," + className);
+
+            //手动调用插件里的onCreate
+            activityInterface.onCreate(bundle);
+        }
+    }
+
+    public ActivityInterface getActivityInterface() {
         String className = getIntent().getStringExtra("className");
 
-        Log.e("xxx",className);
+        Log.e("xxx", className);
 
         try {
             //用的是加载了插件包内容的classLoader，加载插件包里的Activity并通过反射创建对象。
@@ -36,16 +49,20 @@ public class ProxyActivity extends Activity {
             //将宿主占位Activity的context传给插件Activity。
             activityInterface.insertAppContext(this);
 
-            Bundle bundle = new Bundle();
-            bundle.putString("data","我是宿主传递过来的信息,"+className);
-
-            //手动调用插件里的onCreate
-            activityInterface.onCreate(bundle);
+            return activityInterface;
 
         } catch (Exception e) {
             e.fillInStackTrace();
         }
+        return null;
+    }
 
+
+    @Override
+    protected void onDestroy() {
+        ActivityInterface activityInterface = getActivityInterface();
+        activityInterface.onDestory();
+        super.onDestroy();
     }
 
     //其实是插件里的classLoader
@@ -80,4 +97,5 @@ public class ProxyActivity extends Activity {
         intent.putExtra("serviceName",service.getComponent().getClassName());
         return super.startService(intent);
     }
+
 }

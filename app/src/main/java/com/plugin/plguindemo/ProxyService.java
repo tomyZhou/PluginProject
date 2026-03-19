@@ -46,6 +46,7 @@ public class ProxyService extends Service {
             Class serviceClass = getClassLoader().loadClass(serviceName);
             Object object = serviceClass.newInstance();
             ServiceInterface serviceInterface = (ServiceInterface) object;
+
             //把宿主占位Service的环境传给插件Service
             serviceInterface.insertServiceContext(this);
 
