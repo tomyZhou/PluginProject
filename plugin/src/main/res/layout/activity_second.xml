@@ -3,18 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:background="#338899"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#338899"
     tools:context=".PluginActivity">
 
     <TextView
         android:id="@+id/tv_hello"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="15dp"
         android:text="我是插件里的第二个Activity"
         android:textSize="24sp"
-        android:layout_margin="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,14 +22,12 @@
         android:id="@+id/to_service"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="插件内部，启动Service"
-        android:textSize="18sp"
         android:layout_margin="15dp"
-        android:padding="10dp"
         android:background="#339822"
+        android:padding="10dp"
+        android:text="插件内部，start Service"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_hello" />
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

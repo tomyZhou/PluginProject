@@ -3,23 +3,13 @@ package com.plugin.plguindemo;
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.os.Environment;
 import android.util.Log;
-
 import androidx.annotation.Nullable;
-
 import com.plugin.stander.ActivityInterface;
-
-import java.io.File;
 import java.lang.reflect.Constructor;
-import java.util.List;
 
-import dalvik.system.DexClassLoader;
 
 //占位（代理）Activity
 public class ProxyActivity extends Activity {

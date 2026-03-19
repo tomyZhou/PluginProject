@@ -1,9 +1,14 @@
 package com.plugin.plugin;
 
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.os.Bundle;
+import android.os.IBinder;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.core.graphics.Insets;
@@ -11,6 +16,10 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class SecondActivity extends BaseActivity {
+
+    boolean isBound = false;
+
+    private TextView tv_progress;
 
     //this不能用，父类不能用
     @Override
@@ -33,11 +42,9 @@ public class SecondActivity extends BaseActivity {
         findViewById(R.id.to_service).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //其实是宿主ProxyActivity跳转到Service
                 Intent intent = new Intent(appActivity,TestService.class);
                 appActivity.startService(intent);
             }
         });
-
     }
 }

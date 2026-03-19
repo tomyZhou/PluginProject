@@ -1,18 +1,24 @@
 package com.plugin.plguindemo;
 
 import android.app.Service;
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.content.res.Resources;
 import android.os.IBinder;
+
+import androidx.annotation.Nullable;
 
 import com.plugin.stander.ServiceInterface;
 
 public class ProxyService extends Service {
 
+
+    @Nullable
     @Override
     public IBinder onBind(Intent intent) {
-        // TODO: Return the communication channel to the service.
-        throw new UnsupportedOperationException("Not yet implemented");
+        return null;
     }
 
     @Override
@@ -32,26 +38,24 @@ public class ProxyService extends Service {
         return PluginManager.getInstance(this).getResources();
     }
 
-
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-
         String serviceName = intent.getStringExtra("serviceName");
 
         try {
             Class serviceClass = getClassLoader().loadClass(serviceName);
             Object object = serviceClass.newInstance();
             ServiceInterface serviceInterface = (ServiceInterface) object;
-            //注入宿主占位Service的环境
+            //把宿主占位Service的环境传给插件Service
             serviceInterface.insertServiceContext(this);
+
             serviceInterface.onStartCommand(intent,flags,startId);
         } catch (Exception e) {
             e.fillInStackTrace();
         }
-
-
         return super.onStartCommand(intent, flags, startId);
     }
+
 
     @Override
     public void onDestroy() {

@@ -57,6 +57,4 @@ public class BaseActivity extends ComponentActivity implements ActivityInterface
     public View findViewById(int resId){
         return appActivity.findViewById(resId);
     }
-
-
 }

@@ -15,5 +15,4 @@ public interface ServiceInterface {
     public int onStartCommand(Intent intent, int flags, int startId);
 
     public void onDestroy();
-
 }
