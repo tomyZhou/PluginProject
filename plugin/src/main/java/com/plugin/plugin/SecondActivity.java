@@ -33,6 +33,7 @@ public class SecondActivity extends BaseActivity {
         findViewById(R.id.to_service).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //其实是宿主ProxyActivity跳转到Service
                 Intent intent = new Intent(appActivity,TestService.class);
                 appActivity.startService(intent);
             }

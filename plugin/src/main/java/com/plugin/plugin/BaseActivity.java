@@ -14,6 +14,8 @@ public class BaseActivity extends ComponentActivity implements ActivityInterface
 
     //宿主的Activity环境
     public Activity appActivity;
+
+    //将宿主的Activity环境传进来
     @Override
     public void insertAppContext(Activity appActivity) {
         this.appActivity = appActivity;
